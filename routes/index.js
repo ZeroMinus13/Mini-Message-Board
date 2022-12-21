@@ -5,12 +5,12 @@ const messages = [
   {
     text: 'Hi there!',
     user: 'Amando',
-    added: new Date(),
+    added: new Date().toLocaleDateString('en-US') + ' ' + new Date().toLocaleTimeString('en-US'),
   },
   {
     text: 'Hello World!',
     user: 'Charles',
-    added: new Date(),
+    added: new Date().toLocaleDateString('en-US') + ' ' + new Date().toLocaleTimeString('en-US'),
   },
 ];
 
@@ -21,7 +21,11 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/new', function (req, res) {
-  messages.push({ text: req.body.message, user: req.body.user, added: new Date() });
+  messages.push({
+    text: req.body.message,
+    user: req.body.user,
+    added: new Date().toLocaleDateString('en-US') + ' ' + new Date().toLocaleTimeString('en-US'),
+  });
   res.redirect('/');
 });
 module.exports = router;

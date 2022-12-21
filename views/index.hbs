@@ -1,9 +1,11 @@
-<h2><a href="/new">Form</a></h2>
 <h1>{{title}}</h1>
-  {{#each messages}}
-    <li>UserName : {{user}}</li>
-    <li>Message : {{text}}</li>
-    <li>Date Added : {{added}}</li>
+<div class='message-board'>
+  <h2><a href="/new">Add message!</a></h2>
+  {{#each messages }}   
+    <li class="user">{{user}}</li>
+    <li>{{text}}</li>
+    <li class="added">Date : {{added}}</li>
     <hr>
   {{/each}}
+  </div>
 </ul>
